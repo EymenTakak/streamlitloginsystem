@@ -61,7 +61,7 @@ with tab1:
                     c.execute("INSERT INTO product VALUES(?,?,?,?,?)", (nm, img, br, pr, sr))
                     conn.commit()
                     mesaj = "ADDED"
-                    return mesaj
+                    return st.warning(mesaj)
 
 
                 with st.form("custom"):
@@ -71,7 +71,7 @@ with tab1:
                     price = st.number_input("Product Price: ")
                     source = st.text_input("Product Source: ")
 
-                    succ = st.form_submit_button("Added")
+                    succ = st.form_submit_button("Add")
 
                 if succ:
                     addproduct(name,image,brand,price,source)
